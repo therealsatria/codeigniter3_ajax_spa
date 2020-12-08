@@ -2,7 +2,7 @@
 <tfoot>
 <tr>
 <th></th>
-<th><button id="update" class="btn btn-outline-success">Update</button></th>
+<th><button id="update" class="btn btn-outline-success">Save</button></th>
 </tr>
 </tfoot>
 <tbody>
