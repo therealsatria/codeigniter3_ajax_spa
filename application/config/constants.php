@@ -31,6 +31,11 @@ defined('FILE_WRITE_MODE') OR define('FILE_WRITE_MODE', 0666);
 defined('DIR_READ_MODE')   OR define('DIR_READ_MODE', 0755);
 defined('DIR_WRITE_MODE')  OR define('DIR_WRITE_MODE', 0755);
 
+// untuk auth
+defined('kunci_ssl') OR define('kunci_ssl', 'ZJPT01BK-ZJ-5802');
+defined('nama_sesi') OR define('nama_sesi', 'pa3982l');
+
+
 /*
 |--------------------------------------------------------------------------
 | File Stream Modes

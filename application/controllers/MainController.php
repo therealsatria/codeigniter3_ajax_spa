@@ -3,12 +3,32 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class MainController extends CI_Controller {
 
+	function __construct() {
+      parent::__construct();
+      $dtlogin = $this->authmodel->cek_login();
+      if(is_array($dtlogin)){
+        foreach ($dtlogin as $dl){
+        $data["usrnm"] = $dl->username;
+        $data["level"] = $dl->level;
+        $data["nm"] = $dl->nama;
+        }
+        $data['fill'] = 'slave/v14266';
+        $this->load->view('masterview', $data, true);
+      }else{redirect(base_url('auth/'));}
+  }
+
 	public function index()
 	{
-		redirect(base_url()."MainController/listdata/");
+		redirect(base_url()."MainController/list/");
 	}
 
-	public function listdata(){
+	public function logout(){
+      $this->mlog->log_history("Akses","Logout","Logout Berhasil");
+      unset($_SESSION[nama_sesi]);
+      redirect(base_url("auth"));
+    }
+
+	public function list(){
       $data['fill'] = 'component/main';
       $this->load->view('masterview',$data);
   }
@@ -62,13 +82,15 @@ class MainController extends CI_Controller {
 				$t = 'barang';
 				$f = '*';
 	      $dt = $this->connector->select($f,$t);
+				$numbering = '1';
         foreach ($dt as $k){
+						$c0 = $numbering ++ ;
             $c1 = $k->id_barang;
 						$c2 = $k->nama_barang;
 						$c3 = $k->harga;
 						$c4 = $k->stok;
             $btnedit = "<button type='button' class='btn btn-outline-secondary btn-sm' onclick='get(".$c1.")'>Edit</button> | <button type='button' class='btn btn-outline-warning btn-sm' data-kode='".$c1."' onclick='hapus(this)'>Hapus</button>";
-            $dtisi .= '["'.$c1.'","'.$c2.'","'.$c3.'","'.$c4.'","'.$btnedit.'"],';
+            $dtisi .= '["'.$c0.'","'.$c1.'","'.$c2.'","'.$c3.'","'.$c4.'","'.$btnedit.'"],';
         }
         $dtisifix = rtrim($dtisi, ",");
         $data = str_replace("xxx", $dtisifix, $dtJSON);
