@@ -7,6 +7,9 @@
     </li>&nbsp
     <li class="nav-item">
       <a id="add" class="btn btn-primary btn-sm">Add</a>
+    </li>&nbsp
+    <li class="nav-item">
+      <a id="logout" class="btn btn-primary btn-sm">logout</a>
     </li>
   </ul>
 </div>
@@ -269,6 +272,9 @@
         $("#home").addClass("hide");
         $("#add").removeClass("hide");
         document.getElementById("tab1").click();
+      });
+      $("#logout").click(function(){
+        location.href = "../logout";
       });
     });
 

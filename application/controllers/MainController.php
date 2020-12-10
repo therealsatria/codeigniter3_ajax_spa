@@ -7,14 +7,8 @@ class MainController extends CI_Controller {
       parent::__construct();
       $dtlogin = $this->authmodel->cek_login();
       if(is_array($dtlogin)){
-        foreach ($dtlogin as $dl){
-        $data["usrnm"] = $dl->username;
-        $data["level"] = $dl->level;
-        $data["nm"] = $dl->nama;
-        }
-        $data['fill'] = 'slave/v14266';
-        $this->load->view('masterview', $data, true);
-      }else{redirect(base_url('auth/'));}
+				
+      }else{redirect(base_url('auth'));}
   }
 
 	public function index()

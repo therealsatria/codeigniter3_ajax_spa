@@ -42,18 +42,19 @@
     <img class="mb-4" src="<?= base_url('assets/brand/bootstrap-logo.svg') ?>" alt="" width="72" height="57" style="transform:rotate(-20deg);">
     <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
     <!-- email/username -->
-    <label for="inputEmail" class="visually-hidden">Username</label>
+    <label class="visually-hidden">Username</label>
     <input type="email" id="txtkode" class="form-control" placeholder="username" required autofocus>
     <!-- pass -->
-    <label for="inputPassword" class="visually-hidden">Password</label>
+    <label class="visually-hidden">Password</label>
     <input type="password" id="txtpass" class="form-control" placeholder="Password" required>
 
-    <div class="checkbox mb-3">
+    <!-- <div class="checkbox mb-3">
       <label>
         <input type="checkbox" value="remember-me"> Remember me
       </label>
-    </div>
-    <button class="w-100 btn btn-lg btn-primary" onclick="login()">Sign in</button>
+    </div> -->
+    <br>
+    <button class="w-100 btn btn-lg btn-info" onclick="login()">Sign in</button>
     <p class="mt-5 mb-3 text-muted">&copy; Satria Nugraha</p>
     <p class="ip">your ip : <?php echo $_SERVER["REMOTE_ADDR"]; ?></p>
     <input type="text" id="txtip" value="<?php echo $_SERVER["REMOTE_ADDR"]; ?>" hidden>

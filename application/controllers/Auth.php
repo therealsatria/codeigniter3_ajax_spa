@@ -5,7 +5,7 @@ class Auth extends CI_Controller {
         parent::__construct();
         $dtlogin = $this->authmodel->cek_login();
         if(is_array($dtlogin)){
-        	redirect(base_url("maincontroller/"));
+        	redirect(base_url("maincontroller"));
         }
     }
 
