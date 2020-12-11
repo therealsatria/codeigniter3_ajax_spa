@@ -7,7 +7,7 @@ class MainController extends CI_Controller {
       parent::__construct();
       $dtlogin = $this->authmodel->cek_login();
       if(is_array($dtlogin)){
-				
+
       }else{redirect(base_url('auth'));}
   }
 
@@ -84,7 +84,7 @@ class MainController extends CI_Controller {
 						$c3 = $k->harga;
 						$c4 = $k->stok;
             $btnedit = "<button type='button' class='btn btn-outline-secondary btn-sm' onclick='get(".$c1.")'>Edit</button> | <button type='button' class='btn btn-outline-warning btn-sm' data-kode='".$c1."' onclick='hapus(this)'>Hapus</button>";
-            $dtisi .= '["'.$c0.'","'.$c1.'","'.$c2.'","'.$c3.'","'.$c4.'","'.$btnedit.'"],';
+            $dtisi .= '["'.$c0.'","'.$c2.'","'.$c3.'","'.$c4.'","'.$btnedit.'"],';
         }
         $dtisifix = rtrim($dtisi, ",");
         $data = str_replace("xxx", $dtisifix, $dtJSON);
