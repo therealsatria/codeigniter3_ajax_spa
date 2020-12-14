@@ -86,7 +86,7 @@ $(document).ready(function(){
     document.getElementById("tab1").click();
   });
   $("#logout").click(function(){
-    location.href = "../logout";
+    window.location = "<?= base_url('MainController/logout'); ?>";
   });
 });
 

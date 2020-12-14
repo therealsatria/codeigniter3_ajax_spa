@@ -62,9 +62,6 @@
 
 
   <script>
-  function dashboard() {
-    window.location = '<?= base_url('dash'); ?>';
-  }
 
   function login() {
     var u = $("#txtkode").val();
@@ -90,7 +87,7 @@
       cache: "false",
       success: function (x) {
         if (x == 1) {
-          window.location = "<?= base_url('maincontroller'); ?>";
+          window.location = "<?= base_url('MainController/list'); ?>";
         } else {
           swal({
             title: 'Login Gagal',
